@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px #FFD700;
+  color: transparent;
+}
+
+.hover-scale {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.gold-gradient {
+  background: linear-gradient(45deg, #FFD700, #FDB931);
+}
+
+/* Optimisations pour le scroll horizontal */
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+
+/* Animation de chargement progressive des images */
+.image-fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image-fade-in.loaded {
+  opacity: 1;
+}
+
+/* Ligne de pagination active */
+.pagination-dot {
+  transition: width 0.3s ease-in-out;
+}
+
+.pagination-dot.active {
+  width: 2rem;
+}
+
+/* Effet de survol des cartes produits */
+.product-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour la barre de filtres sticky */
+.filter-bar-sticky {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
