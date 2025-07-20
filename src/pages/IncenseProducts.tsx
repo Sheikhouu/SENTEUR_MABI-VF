@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Star, Heart, Flame } from 'lucide-react';
+import { Flame, Star } from 'lucide-react';
 import { productData } from '../data/products';
-import WhatsAppButton from '../components/WhatsAppButton';
+import AddToCartButton from '../components/AddToCartButton';
 import PriceDisplay from '../components/PriceDisplay';
 
 const IncenseProducts = () => {
@@ -126,45 +126,32 @@ const IncenseProducts = () => {
                 <p className="text-gray-600 mb-4">{product.description}</p>
 
                 <div className="space-y-4 mb-6 flex-grow">
-                  {product.notes && (
-                    <div>
-                      <h4 className="font-medium text-sm mb-2">Notes principales</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {product.notes.map((note, i) => (
-                          <span
-                            key={i}
-                            className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm flex items-center"
-                          >
-                            <Flame className="w-3 h-3 mr-1" />
-                            {note}
-                          </span>
-                        ))}
-                      </div>
+                  <div>
+                    <h4 className="font-medium text-sm mb-2">Catégorie</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center">
+                        <Flame className="w-3 h-3 mr-1" />
+                        {product.category}
+                      </span>
                     </div>
-                  )}
-
-                  {product.benefits && (
-                    <div>
-                      <h4 className="font-medium text-sm mb-2">Bienfaits</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {product.benefits.map((benefit, i) => (
-                          <span
-                            key={i}
-                            className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm flex items-center"
-                          >
-                            <Star className="w-3 h-3 mr-1" />
-                            {benefit}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  </div>
                 </div>
 
                 <div className="pt-4 border-t mt-auto">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col gap-3">
                     <PriceDisplay prices={product.prices} showAll={true} />
-                    <WhatsAppButton productName={product.name} />
+                    <AddToCartButton
+                      product={{
+                        id: product.id,
+                        name: product.name,
+                        price: product.prices.fcfa,
+                        category: 'Encens',
+                        size: product.size,
+                        image: product.image
+                      }}
+                      variant="default"
+                      maxQuantity={10}
+                    />
                   </div>
                 </div>
               </div>

@@ -5,38 +5,66 @@ import Fuse from 'fuse.js';
 import { useNavigate } from 'react-router-dom';
 import { productData } from '../data/products';
 
+// Product interface for search results
+interface SearchProduct {
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  path: string;
+  image?: string;
+  prices?: {
+    eur?: number;
+    cad?: number;
+    fcfa?: number;
+  };
+}
+
 // Create a flat array of all products with safe property access
-const getAllProducts = () => {
-  const products = [];
+const getAllProducts = (): SearchProduct[] => {
+  const products: SearchProduct[] = [];
   
   // Add incense products if they exist
   if (productData?.encens?.varieties) {
     productData.encens.varieties.forEach(product => {
       products.push({
-        ...product,
+        id: product.id,
+        name: product.name,
+        description: product.description,
         category: 'Encens',
-        path: `/categories/incense`
+        path: `/categories/incense`,
+        image: product.image,
+        prices: product.prices
       });
     });
   }
 
-  // Add body oils if they exist
+  // Add women's collection if it exists
   if (productData?.womenCollection?.products) {
     productData.womenCollection.products.forEach(product => {
       products.push({
-        ...product,
-        category: 'Huiles corporelles',
-        path: `/categories/body-oils/women`
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        category: 'Collection Femme',
+        path: `/categories/women`,
+        image: product.image,
+        prices: productData.womenCollection.formats.oil.prices
       });
     });
   }
 
+  // Add men's collection if it exists
   if (productData?.menCollection?.products) {
     productData.menCollection.products.forEach(product => {
       products.push({
-        ...product,
-        category: 'Huiles corporelles',
-        path: `/categories/body-oils/men`
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        category: 'Collection Homme',
+        path: `/categories/men`,
+        image: product.image,
+        prices: productData.menCollection.formats.oil.prices
       });
     });
   }
@@ -45,9 +73,13 @@ const getAllProducts = () => {
   if (productData?.ambientFragrances?.products) {
     productData.ambientFragrances.products.forEach(product => {
       products.push({
-        ...product,
-        category: 'Parfums d\'ambiance',
-        path: `/categories/ambient-fragrances`
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        category: 'Huiles à brûler',
+        path: `/categories/ambient`,
+        image: product.image,
+        prices: product.prices
       });
     });
   }
@@ -67,7 +99,7 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ className = '', onClose }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [results, setResults] = useState<any[]>([]);
+  const [results, setResults] = useState<SearchProduct[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -96,7 +128,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ className = '', onClose }) => {
     }
   };
 
-  const handleSelectProduct = (product: any) => {
+  const handleSelectProduct = (product: SearchProduct) => {
     navigate(product.path);
     setSearchTerm('');
     setIsOpen(false);

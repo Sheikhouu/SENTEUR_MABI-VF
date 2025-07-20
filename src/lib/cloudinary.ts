@@ -3,7 +3,7 @@ import { supabase } from './supabase';
 export async function fetchAndStoreCloudinaryImages() {
   try {
     // Faire une requête à notre backend Supabase pour synchroniser les images
-    const { data, error } = await supabase
+    const { error } = await supabase
       .rpc('sync_cloudinary_images');
 
     if (error) throw error;

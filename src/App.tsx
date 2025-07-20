@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './contexts/CartContext';
 import Navbar from './components/Navbar';
+import Cart from './components/Cart';
+import WhatsAppCartButton from './components/WhatsAppCartButton';
 import Home from './pages/Home';
 import Categories from './pages/Categories';
 import About from './pages/About';
@@ -17,26 +20,30 @@ import BlogArticle from './pages/BlogArticle';
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/media" element={<MediaManager />} />
-          <Route path="/categories/incense" element={<IncenseProducts />} />
-          <Route path="/categories/women" element={<WomenCollection />} />
-          <Route path="/categories/men" element={<LuxeHomme />} />
-          <Route path="/categories/ambient" element={<AmbientFragrances />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<Article />} />
-          <Route path="/blog/huiles-parfumees" element={<BlogArticle />} />
-        </Routes>
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div className="min-h-screen bg-background">
+          <Navbar />
+          <Cart />
+          <WhatsAppCartButton variant="floating" />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/media" element={<MediaManager />} />
+            <Route path="/categories/incense" element={<IncenseProducts />} />
+            <Route path="/categories/women" element={<WomenCollection />} />
+            <Route path="/categories/men" element={<LuxeHomme />} />
+            <Route path="/categories/ambient" element={<AmbientFragrances />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<Article />} />
+            <Route path="/blog/huiles-parfumees" element={<BlogArticle />} />
+          </Routes>
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 

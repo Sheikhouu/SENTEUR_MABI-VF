@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Star, Heart, Info } from 'lucide-react';
+import { Info, Star } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
 import PriceDisplay from './PriceDisplay';
-import WhatsAppButton from './WhatsAppButton';
+import AddToCartButton from './AddToCartButton';
 
 interface ProductCardProps {
   id: string;
@@ -28,7 +27,6 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
-  id,
   name,
   description,
   fullDescription,
@@ -133,16 +131,27 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </motion.div>
 
         <div className="pt-4 border-t mt-4">
-          <div className="flex items-center justify-between">
-            <div className="flex flex-col">
+          <div className="flex flex-col gap-3">
+            <div className="flex items-center justify-between">
               <PriceDisplay prices={displayPrices} showAll={true} />
               {size && (
-                <span className="text-sm text-gray-500">
-                  Format {size}
+                <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                  {size}
                 </span>
               )}
             </div>
-            <WhatsAppButton productName={`${name} (${category})`} />
+            <AddToCartButton
+              product={{
+                id: name.toLowerCase().replace(/\s+/g, '-'),
+                name: name,
+                price: displayPrices?.fcfa || price || 0,
+                category: category,
+                size: size,
+                image: imageUrl || image
+              }}
+              variant="default"
+              maxQuantity={15}
+            />
           </div>
         </div>
       </div>

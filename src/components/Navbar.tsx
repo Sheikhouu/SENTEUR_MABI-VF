@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SearchBar from './SearchBar';
+import CartButton from './CartButton';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -194,12 +195,12 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Right section - Search and Mobile Menu */}
-            <div className="flex items-center justify-end flex-1">
+            {/* Right section - Search & Cart */}
+            <div className="flex items-center space-x-4 flex-1 justify-end">
               {/* Mobile Menu Button */}
               <motion.button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden mr-4"
+                className="lg:hidden"
                 whileTap={{ scale: 0.95 }}
               >
                 {isMobileMenuOpen ? (
@@ -209,9 +210,17 @@ const Navbar = () => {
                 )}
               </motion.button>
 
-              {/* Search Bar */}
-              <div className="hidden lg:block w-64">
-                <SearchBar />
+              {/* Search Bar & Cart - Desktop */}
+              <div className="hidden lg:flex items-center space-x-4">
+                <div className="w-64">
+                  <SearchBar />
+                </div>
+                <CartButton />
+              </div>
+
+              {/* Cart Button - Mobile */}
+              <div className="lg:hidden">
+                <CartButton />
               </div>
             </div>
           </div>

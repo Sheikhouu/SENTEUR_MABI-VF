@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Star, Heart, Droplet } from 'lucide-react';
+import { Droplet } from 'lucide-react';
 import { productData } from '../data/products';
 import PriceDisplay from '../components/PriceDisplay';
 import WhatsAppButton from '../components/WhatsAppButton';

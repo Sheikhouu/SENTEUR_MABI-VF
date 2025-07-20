@@ -10,6 +10,21 @@ import OptimizedImage from '../components/OptimizedImage';
 import FAQPreview from '../components/FAQPreview';
 import { productData } from '../data/products';
 
+// Product interface for Home page
+interface HomeProduct {
+  id: string;
+  name: string;
+  description: string;
+  category?: string;
+  image?: string;
+  prices?: {
+    eur?: number;
+    cad?: number;
+    fcfa?: number;
+  };
+  [key: string]: any; // For additional flexible properties
+}
+
 const WelcomeSection = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -91,7 +106,7 @@ const CollectionSection = ({
 }: { 
   title: string;
   subtitle: string;
-  products: any[];
+  products: HomeProduct[];
   category: string;
   link: string;
   displayCount?: number;
