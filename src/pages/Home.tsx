@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Heart, Star, Sparkles, ArrowRight, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import Hero from '../components/Hero';
 import ProductCard from '../components/ProductCard';
 import Footer from '../components/Footer';
@@ -321,9 +322,16 @@ const Home = () => {
   const ambientProducts = productData.ambientFragrances.products;
 
   return (
-    <main className="bg-background">
-      <Hero />
-      <WelcomeSection />
+    <>
+      <Helmet>
+        <title>Senteur by Mabi - Encens, Thiourayes, Huiles Parfumées et Parfums d'Ambiance</title>
+        <meta name="description" content="Encens, thiourayes, huiles parfumées et parfums d'ambiance : explorez les senteurs raffinées de Senteur by Mabi pour un véritable moment de bien-être." />
+        <meta name="keywords" content="encens, thiouraye, huiles parfumées, parfums d'ambiance, senteurs, bien-être, tradition sénégalaise, aromathérapie, luxe homme, collection femme" />
+      </Helmet>
+      
+      <main className="bg-background">
+        <Hero />
+        <WelcomeSection />
       
       <CollectionSection
         title="Nos Encens"
@@ -358,11 +366,12 @@ const Home = () => {
         link="/categories/ambient"
       />
 
-      <AboutPreview />
-      <BlogPreview />
-      <FAQPreview />
-      <Footer />
-    </main>
+        <AboutPreview />
+        <BlogPreview />
+        <FAQPreview />
+        <Footer />
+      </main>
+    </>
   );
 };
 
