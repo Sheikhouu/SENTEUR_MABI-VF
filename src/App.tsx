@@ -4,6 +4,7 @@ import { CartProvider } from './contexts/CartContext';
 import Navbar from './components/Navbar';
 import Cart from './components/Cart';
 import WhatsAppCartButton from './components/WhatsAppCartButton';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Categories from './pages/Categories';
 import About from './pages/About';
@@ -22,6 +23,7 @@ function App() {
   return (
     <CartProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen bg-background">
           <Navbar />
           <Cart />
