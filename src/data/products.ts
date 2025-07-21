@@ -4,8 +4,8 @@ export const productData = {
       small: {
         size: '150g',
         prices: {
-          eur: 21,
-          cad: 28,
+          eur: 20,
+          cad: 25,
           fcfa: 7000,
         },
       },
@@ -34,8 +34,8 @@ export const productData = {
         description:
           "Une ode à la nature, florale et fruitée.Une alliance subtile entre les copeaux du Tchad, les pétales de rose et les agrumes, sublimée par des notes de lavande et de boutons de rose. Un parfum éclatant et raffiné.",
         prices: {
-          eur: 21,
-          cad: 28,
+          eur: 20,
+          cad: 25,
           fcfa: 7000,
         },
         category: 'Floral',
@@ -48,8 +48,8 @@ export const productData = {
         description:
           " Une brise fraîche et apaisante.Laissez-vous séduire par la légèreté rafraîchissante de la menthe alliée au Naak Jeedah. Une senteur pure et vivifiante qui purifie l'air et apporte une sensation de sérénité absolue.",
         prices: {
-          eur: 21,
-          cad: 28,
+          eur: 20,
+          cad: 25,
           fcfa: 7000,
         },
         category: 'Premium',
@@ -62,8 +62,8 @@ export const productData = {
         description:
           "Une ambiance naturelle et apaisante.L'intensité du Soufou Médine s'unit à la profondeur du Nak Goudron et du Coco, offrant un parfum puissant et charismatique. Une invitation à renouer avec la nature dans toute sa splendeur. ",
         prices: {
-          eur: 21,
-          cad: 28,
+          eur: 20,
+          cad: 25,
           fcfa: 7000,
         },
         category: 'Boisé',
@@ -76,8 +76,8 @@ export const productData = {
         description:
           "Une composition audacieuse, un équilibre parfait.Un mélange sophistiqué où chaque note s'unit harmonieusement pour offrir une expérience olfactive unique et exaltante.",
         prices: {
-          eur: 21,
-          cad: 28,
+          eur: 20,
+          cad: 25,
           fcfa: 7000,
         },
         category: 'Tropical',
@@ -90,8 +90,8 @@ export const productData = {
         description:
           "Un voyage sensoriel au coeur des îles exotiques.Laissez-vous transporter par un tourbillon d'arômes ensoleillés où les encens se marient harmonieusement aux notes sucrées d'ananas, de coco et de fruits exotiques. Une senteur à la fois gourmande et dépaysante, évoquant la chaleur d'un coucher de soleil sur une plage paradisiaque.",
         prices: {
-          eur: 21,
-          cad: 28,
+          eur: 20,
+          cad: 25,
           fcfa: 7000,
         },
         category: 'Tropical',
@@ -104,8 +104,8 @@ export const productData = {
         description:
           "Un bouquet envoûtant, délicat et enivrant.Une composition où les pétales de rose, le bakhour et la lavande se mêlent dans une danse florale exquise. Une senteur élégante et féminine qui évoque la grâce et la douceur.",
         prices: {
-          eur: 21,
-          cad: 28,
+          eur: 20,
+          cad: 25,
           fcfa: 7000,
         },
         category: 'Floral',
@@ -118,8 +118,8 @@ export const productData = {
         description:
           "Une essence précieuse, riche de tradition.Un encens puissant et authentique, apprécié pour sa profondeur envoûtante et son héritage olfactif intemporel.",
         prices: {
-          eur: 21,
-          cad: 28,
+          eur: 20,
+          cad: 25,
           fcfa: 7000,
         },
         category: 'Boisé',
@@ -135,8 +135,8 @@ export const productData = {
         description:
           "Un tourbillon de senteurs audacieuses et puissantes.Le Diguidié et le Sarkhatan fusionnent dans une fragrance enivrante et sensuelle. Une explosion olfactive captivante, parfaite pour les esprits libres et audacieux.",
         prices: {
-          eur: 21,
-          cad: 28,
+          eur: 20,
+          cad: 25,
           fcfa: 7000,
         },
         category: 'Boisé',
@@ -149,8 +149,8 @@ export const productData = {
         description:
           "Une fragrance ardente, vibrante et solaire. L'éclat des agrumes allié à la profondeur du Soufou Médine crée un encens à la fois dynamique et sophistiqué. Parfait pour illuminer votre intérieur d'une énergie pétillante. ",
         prices: {
-          eur: 21,
-          cad: 28,
+          eur: 20,
+          cad: 25,
           fcfa: 7000,
         },
         category: 'Premium',
@@ -163,8 +163,8 @@ export const productData = {
         description:
           "Un parfum boisé, noble et envoûtant.Une alchimie subtile entre le Bois de Santal, le Bois d'Oud et le bois Tchad révélant une senteur à la fois profonde et majestueuse. Idéal pour une ambiance feutrée et luxueuse..",
         prices: {
-          eur: 21,
-          cad: 28,
+          eur: 20,
+          cad: 25,
           fcfa: 7000,
         },
         category: 'Boisé',
@@ -177,8 +177,8 @@ export const productData = {
         description:
           "Une évasion sensorielle, intense et sophistiquée.Plongez dans un univers de mystère et de passion avec Éclat Rouge. L'accord profond du Naak Jeedah et du Bakhour dévoile une senteur envoûtante et luxueuse, parfaite pour habiller vos espaces d'une aura chaleureuse et raffinée.",
         prices: {
-          eur: 21,
-          cad: 28,
+          eur: 20,
+          cad: 25,
           fcfa: 7000,
         },
         category: 'Premium',
@@ -193,16 +193,16 @@ export const productData = {
       oil: {
         size: '50ml',
         prices: {
-          eur: 17,
-          cad: 26,
-          fcfa: 5500,
+          eur: 20,
+          cad: 25,
+          fcfa: 7500,
         },
       },
       mist: {
         size: '50ml',
         prices: {
-          eur: 24,
-          cad: 32,
+          eur: 21,
+          cad: 28,
           fcfa: 8000,
         },
       },
@@ -257,16 +257,16 @@ export const productData = {
       oil: {
         size: '50ml',
         prices: {
-          eur: 24,
-          cad: 32,
-          fcfa: 8000,
+          eur: 20,
+          cad: 25,
+          fcfa: 7500,
         },
       },
       mist: {
         size: '50ml',
         prices: {
           eur: 25,
-          cad: 34,
+          cad: 30,
           fcfa: 9000,
         },
       },
@@ -291,8 +291,8 @@ export const productData = {
         description:
           "Une huile parfumée aux notes de oud authentique pour créer une atmosphère mystérieuse et envoûtante dans votre intérieur. Son parfum oriental profond transforme instantanément l'ambiance de votre maison.",
         prices: {
-          eur: 22.5,
-          cad: 30,
+          eur: 20,
+          cad: 25,
           fcfa: 7500,
         },
         volume_ml: 50,
@@ -305,9 +305,9 @@ export const productData = {
         description:
           "Une huile parfumée contemporaine aux notes fraîches et élégantes. Cette fragrance moderne apporte une touche sophistiquée et raffinée à votre espace de vie.",
         prices: {
-          eur: 17,
-          cad: 26,
-          fcfa: 5500,
+          eur: 14,
+          cad: 20,
+          fcfa: 5000,
         },
         volume_ml: 30,
         notes: ['Notes Fraîches', 'Élégance Moderne'],
@@ -321,7 +321,7 @@ export const productData = {
         prices: {
           eur: 21,
           cad: 28,
-          fcfa: 7000,
+          fcfa: 8000,
         },
         volume_ml: 300,
         image: 'https://res.cloudinary.com/dkzwityrq/image/upload/v1743894097/parfum_de_chambre_last_iprd5l.png',
