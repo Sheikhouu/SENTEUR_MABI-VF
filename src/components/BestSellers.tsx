@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Heart } from 'lucide-react';
 import PriceDisplay from './PriceDisplay';
 import WhatsAppButton from './WhatsAppButton';
+import AddToCartButton from './AddToCartButton';
 
 const products = [
   {
@@ -123,9 +124,22 @@ const BestSellers = () => {
                   >
                     <h3 className="font-playfair text-xl text-text mb-2">{product.name}</h3>
                     <p className="text-gray-600 mb-3">{product.description}</p>
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col gap-3">
                       <PriceDisplay prices={product.prices} showAll={true} />
-                      <WhatsAppButton productName={product.name} />
+                      <div className="flex flex-col gap-2">
+                        <AddToCartButton
+                          product={{
+                            id: `bestseller-${product.id}`,
+                            name: product.name,
+                            price: product.prices.fcfa,
+                            category: "Best-Sellers",
+                            image: product.image
+                          }}
+                          variant="compact"
+                          maxQuantity={10}
+                        />
+                        <WhatsAppButton productName={product.name} />
+                      </div>
                     </div>
                   </motion.div>
                 )}

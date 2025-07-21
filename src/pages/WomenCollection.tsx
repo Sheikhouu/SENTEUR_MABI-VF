@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { productData } from '../data/products';
 import WhatsAppButton from '../components/WhatsAppButton';
 import PriceDisplay from '../components/PriceDisplay';
+import AddToCartButton from '../components/AddToCartButton';
 import { Info } from 'lucide-react';
 
 const WomenCollection = () => {
@@ -145,9 +146,23 @@ const WomenCollection = () => {
                 <p className="text-gray-600 mb-6">{product.description}</p>
 
                 <div className="pt-4 border-t">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col gap-3">
                     <PriceDisplay prices={product.prices} showAll={true} />
-                    <WhatsAppButton productName={`${product.name} (${selectedType === 'oil' ? 'Huile' : 'Brume'} ${product.size})`} />
+                    <div className="flex flex-col gap-2">
+                      <AddToCartButton
+                        product={{
+                          id: `${product.id}-${selectedType}-${selectedSize}`,
+                          name: `${product.name} (${selectedType === 'oil' ? 'Huile' : 'Brume'})`,
+                          price: product.prices.fcfa,
+                          category: "Collection Femme",
+                          size: product.size,
+                          image: product.image
+                        }}
+                        variant="default"
+                        maxQuantity={10}
+                      />
+                      <WhatsAppButton productName={`${product.name} (${selectedType === 'oil' ? 'Huile' : 'Brume'} ${product.size})`} />
+                    </div>
                   </div>
                 </div>
               </div>

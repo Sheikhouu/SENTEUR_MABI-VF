@@ -5,6 +5,7 @@ import { Droplet } from 'lucide-react';
 import { productData } from '../data/products';
 import PriceDisplay from '../components/PriceDisplay';
 import WhatsAppButton from '../components/WhatsAppButton';
+import AddToCartButton from '../components/AddToCartButton';
 
 const LuxeHomme = () => {
   const [ref, inView] = useInView({
@@ -100,9 +101,23 @@ const LuxeHomme = () => {
                 </div>
 
                 <div className="pt-4 border-t mt-auto">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col gap-3">
                     <PriceDisplay prices={product.prices} showAll={true} />
-                    <WhatsAppButton productName={product.name} />
+                    <div className="flex flex-col gap-2">
+                      <AddToCartButton
+                        product={{
+                          id: product.id,
+                          name: product.name,
+                          price: product.prices.fcfa,
+                          category: "Luxe Homme",
+                          size: product.volume,
+                          image: product.image
+                        }}
+                        variant="default"
+                        maxQuantity={10}
+                      />
+                      <WhatsAppButton productName={product.name} />
+                    </div>
                   </div>
                 </div>
               </div>
