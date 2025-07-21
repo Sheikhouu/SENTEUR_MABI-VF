@@ -19,9 +19,9 @@ const WomenCollection = () => {
     ? productData.womenCollection.products.map(product => ({
         ...product,
         prices: {
-          eur: selectedSize === '30ml' ? 14 : 18,
-          cad: selectedSize === '30ml' ? 20 : 25,
-          fcfa: selectedSize === '30ml' ? 5000 : 7500
+          eur: selectedSize === '30ml' ? 17 : 22.5,
+          cad: selectedSize === '30ml' ? 26 : 30,
+          fcfa: selectedSize === '30ml' ? 5500 : 7500
         },
         size: selectedSize
       }))
@@ -93,7 +93,7 @@ const WomenCollection = () => {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      Format 30ml ➡️ 5.000 FCFA
+                      Format 30ml ➡️ 5.500 FCFA
                     </motion.button>
                     <motion.button
                       className={`px-6 py-3 rounded-lg transition-colors ${
