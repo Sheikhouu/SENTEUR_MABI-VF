@@ -12,8 +12,8 @@ export const productData = {
       large: {
         size: '300g',
         prices: {
-          eur: 45,
-          cad: 60,
+          eur: 35,
+          cad: 45,
           fcfa: 15000,
         },
       },
