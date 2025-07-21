@@ -30,7 +30,7 @@ const Cart: React.FC = () => {
 
   const handleWhatsAppOrder = () => {
     const message = generateWhatsAppMessage();
-    const phoneNumber = '+221123456789'; // Remplacer par le vrai numéro
+    const phoneNumber = '+221784209999'; // Numéro WhatsApp officiel
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
     
     // Optionnel: vider le panier après commande

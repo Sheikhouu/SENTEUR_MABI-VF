@@ -13,7 +13,7 @@ interface WhatsAppCartButtonProps {
 const WhatsAppCartButton: React.FC<WhatsAppCartButtonProps> = ({
   className = '',
   variant = 'default',
-  phoneNumber = '+221123456789', // Remplacer par le vrai numéro
+  phoneNumber = '+221784209999', // Numéro WhatsApp officiel
   customMessage
 }) => {
   const { items, total } = useCart();
