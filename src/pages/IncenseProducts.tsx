@@ -95,7 +95,7 @@ const IncenseProducts = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Format 300g - 15 000 FCFA
+              Format 300g - 13 000 FCFA
             </motion.button>
           </div>
 
